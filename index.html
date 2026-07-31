@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhumika Khatri — Travel & Lifestyle Storyteller</title>
+  <meta name="description" content="Portfolio of Bhumika Khatri, a travel & lifestyle content creator. Slow travel, visual storytelling, and intentional brand collaborations.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hidden SVG Displacement Filters for Wobbly Borders -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" width="0" height="0" aria-hidden="true">
+    <defs>
+      <!-- Standard card and button wobble -->
+      <filter id="wobbly-filter" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      <!-- Slightly heavier wobble for doodles and details -->
+      <filter id="wobbly-filter-heavy" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Sidebar labels (Pinterest mood board style) -->
+  <div class="sidebar-labels left-sidebar">
+    <span class="vertical-label">SAVE</span>
+    <span class="vertical-label">FOR</span>
+    <span class="vertical-label">LATER</span>
+  </div>
+  <div class="sidebar-labels right-sidebar">
+    <span class="vertical-label">PART 1</span>
+    <span class="vertical-label">PICK YOUR MOOD BOARD</span>
+  </div>
+
+  <!-- Premium Header & Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-name">Bhumika</span>
+        <span class="logo-handle">@_bhumiikaa_</span>
+      </a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#about" class="nav-link">Process</a></li>
+          <li><a href="#brands" class="nav-link">Partners</a></li>
+          <li><a href="#contact" class="btn btn-nav btn-wobbly">Let's Create</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section (Centerpiece) -->
+    <section class="hero-section" id="hero">
+      
+      <!-- Large background lily image (for mood board collage layout) -->
+      <div class="hero-bg-lily-container">
+        <img src="assets/bg-lily.jpg" alt="" class="hero-bg-lily">
+      </div>
+
+      <div class="hero-container">
+        
+        <!-- Eyebrow Label -->
+        <span class="hero-eyebrow label-mono">Travel, Lifestyle & Fashion Storyteller</span>
+        
+        <!-- Main Portrait Composition Container -->
+        <div class="hero-portrait-wrapper">
+          
+          <!-- Pantone Swatch Card -->
+          <div class="pantone-card wobbly-border">
+            <div class="pantone-color-block"></div>
+            <div class="pantone-meta">
+              <span class="pantone-title label-mono">PANTONE</span>
+              <span class="pantone-code label-mono">15-6313 TCX</span>
+              <span class="pantone-name font-body">Laurel Green</span>
+            </div>
+            <!-- Circle indicator hole -->
+            <div class="pantone-hole"></div>
+            <div class="masking-tape tape-pantone"></div>
+          </div>
+
+          <!-- Collage Swatch Card (Matcha) -->
+          <div class="collage-swatch-card wobbly-border">
+            <div class="swatch-img-frame">
+              <img src="assets/trip-matcha.jpg" alt="Matcha foam texture" class="swatch-img">
+            </div>
+            <div class="masking-tape tape-swatch"></div>
+          </div>
+
+          <!-- Star Doodles scattered around -->
+          <svg class="star-doodle star-1" viewBox="0 0 24 24" fill="none" stroke="#D98C99" stroke-width="1.5">
+            <path d="M12 3 C12 8, 8 12, 3 12 C8 12, 12 16, 12 21 C12 16, 16 12, 21 12 C16 12, 12 8, 12 3 Z" />
+          </svg>
+          <svg class="star-doodle star-2" viewBox="0 0 24 24" fill="none" stroke="#8B9B78" stroke-width="1.5">
+            <path d="M12 3 C12 8, 8 12, 3 12 C8 12, 12 16, 12 21 C12 16, 16 12, 21 12 C16 12, 12 8, 12 3 Z" />
+          </svg>
+          <svg class="star-doodle star-3" viewBox="0 0 24 24" fill="none" stroke="#3A2F2A" stroke-width="1">
+            <path d="M12 3 C12 8, 8 12, 3 12 C8 12, 12 16, 12 21 C12 16, 16 12, 21 12 C16 12, 12 8, 12 3 Z" />
+          </svg>
+          <svg class="star-doodle star-4" viewBox="0 0 24 24" fill="none" stroke="#C97F92" stroke-width="1.5">
+            <path d="M12 3 C12 8, 8 12, 3 12 C8 12, 12 16, 12 21 C12 16, 16 12, 21 12 C16 12, 12 8, 12 3 Z" />
+          </svg>
+
+          <!-- Rotating Dashed Frame -->
+          <div class="rotating-dashed-frame"></div>
+          
+          <!-- Center Photo -->
+          <div class="hero-photo-container wobbly-border">
+            <img src="assets/hero-portrait.jpg" alt="Bhumika Khatri" class="hero-photo">
+            <!-- Masking tape at the top of portrait -->
+            <div class="masking-tape tape-portrait"></div>
+          </div>
+
+          <!-- Absolute-positioned Callouts (Desktop-only) -->
+          <!-- 1. Top Left -->
+          <div class="hero-callout callout-tl">
+            <span class="callout-text font-script">Chasing sunsets & new cities ✈️</span>
+            <svg class="arrow arrow-tl" viewBox="0 0 100 50" fill="none" stroke="#3A2F2A" stroke-width="1" stroke-linecap="round">
+              <path d="M15,10 Q60,15 85,35" stroke-dasharray="3 3" />
+              <polygon points="85,35 77,32 80,39" fill="#3A2F2A" stroke="none" />
+            </svg>
+          </div>
+
+          <!-- 2. Center Left -->
+          <div class="hero-callout callout-cl">
+            <span class="callout-text font-script">42.3K family on Instagram 🤍</span>
+            <svg class="arrow arrow-cl" viewBox="0 0 100 30" fill="none" stroke="#3A2F2A" stroke-width="1" stroke-linecap="round">
+              <path d="M15,15 Q55,10 85,18" stroke-dasharray="3 3" />
+              <polygon points="85,18 78,13 79,22" fill="#3A2F2A" stroke="none" />
+            </svg>
+          </div>
+
+          <!-- 3. Bottom Left -->
+          <div class="hero-callout callout-bl">
+            <span class="callout-text font-script">collab.bhumii@gmail.com ✉️</span>
+            <svg class="arrow arrow-bl" viewBox="0 0 100 50" fill="none" stroke="#3A2F2A" stroke-width="1" stroke-linecap="round">
+              <path d="M15,40 Q55,30 85,15" stroke-dasharray="3 3" />
+              <polygon points="85,15 78,11 81,19" fill="#3A2F2A" stroke="none" />
+            </svg>
+          </div>
+
+          <!-- 4. Top Right -->
+          <div class="hero-callout callout-tr">
+            <svg class="arrow arrow-tr" viewBox="0 0 100 50" fill="none" stroke="#3A2F2A" stroke-width="1" stroke-linecap="round">
+              <path d="M85,10 Q40,15 15,35" stroke-dasharray="3 3" />
+              <polygon points="15,35 23,38 20,31" fill="#3A2F2A" stroke="none" />
+            </svg>
+            <span class="callout-text font-script">Based in the United Kingdom 🇬🇧</span>
+          </div>
+
+          <!-- 5. Center Right -->
+          <div class="hero-callout callout-cr">
+            <svg class="arrow arrow-cr" viewBox="0 0 100 30" fill="none" stroke="#3A2F2A" stroke-width="1" stroke-linecap="round">
+              <path d="M85,15 Q45,10 15,18" stroke-dasharray="3 3" />
+              <polygon points="15,18 22,22 21,13" fill="#3A2F2A" stroke="none" />
+            </svg>
+            <span class="callout-text font-script">3.5M views this month 📈</span>
+          </div>
+
+          <!-- 6. Bottom Right -->
+          <div class="hero-callout callout-br">
+            <svg class="arrow arrow-br" viewBox="0 0 100 50" fill="none" stroke="#3A2F2A" stroke-width="1" stroke-linecap="round">
+              <path d="M85,40 Q45,30 15,15" stroke-dasharray="3 3" />
+              <polygon points="15,15 22,19 19,11" fill="#3A2F2A" stroke="none" />
+            </svg>
+            <span class="callout-text font-script">Interactions: 345.4K+ ⚡</span>
+          </div>
+
+        </div>
+
+        <!-- Mobile-only Collapsed Callouts Row -->
+        <div class="mobile-callouts-container">
+          <span class="mobile-tag">Chasing sunsets & new cities ✈️</span>
+          <span class="mobile-tag">Based in: UK 🇬🇧</span>
+          <span class="mobile-tag">42.3K Followers 🤍</span>
+          <span class="mobile-tag">3.5M Monthly Views 📈</span>
+          <span class="mobile-tag">Interactions: 345.4K+ ⚡</span>
+          <span class="mobile-tag">collab.bhumii@gmail.com ✉️</span>
+        </div>
+
+        <!-- Tagline Below Portrait -->
+        <h2 class="hero-tagline font-script">
+          "Chasing sunsets & new cities. Travel • Lifestyle • Fashion"
+        </h2>
+
+      </div>
+    </section>
+
+    <!-- Spiral Binder Ring Separator (Scrapbook theme) -->
+    <div class="spiral-binder-separator">
+      <div class="binder-rings-container">
+        <!-- Generated dynamically, with 6 fallback static rings for SSR/No-JS -->
+        <div class="binder-ring"><div class="ring-hole hole-top"></div><div class="metal-ring"></div><div class="ring-hole hole-bottom"></div></div>
+        <div class="binder-ring"><div class="ring-hole hole-top"></div><div class="metal-ring"></div><div class="ring-hole hole-bottom"></div></div>
+        <div class="binder-ring"><div class="ring-hole hole-top"></div><div class="metal-ring"></div><div class="ring-hole hole-bottom"></div></div>
+        <div class="binder-ring"><div class="ring-hole hole-top"></div><div class="metal-ring"></div><div class="ring-hole hole-bottom"></div></div>
+        <div class="binder-ring"><div class="ring-hole hole-top"></div><div class="metal-ring"></div><div class="ring-hole hole-bottom"></div></div>
+        <div class="binder-ring"><div class="ring-hole hole-top"></div><div class="metal-ring"></div><div class="ring-hole hole-bottom"></div></div>
+      </div>
+    </div>
+
+    <!-- Stats Strip Section -->
+    <section class="stats-strip-section" id="stats">
+      <div class="stats-container">
+        
+        <div class="stats-card wobbly-border">
+          <span class="stats-value label-mono">42.3K</span>
+          <span class="stats-label font-body">Followers</span>
+        </div>
+        
+        <div class="stats-card wobbly-border">
+          <span class="stats-value label-mono">3.5M</span>
+          <span class="stats-label font-body">Monthly Views</span>
+        </div>
+        
+        <div class="stats-card wobbly-border">
+          <span class="stats-value label-mono">345.4K</span>
+          <span class="stats-label font-body">Interactions</span>
+        </div>
+        
+        <div class="stats-card wobbly-border">
+          <span class="stats-value label-mono">36</span>
+          <span class="stats-label font-body">Shared Stories</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Gallery Section (Polaroids) -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-header-container">
+        <span class="section-eyebrow label-mono">Visual Diary</span>
+        <h2 class="section-title font-serif">Recent Destinations</h2>
+      </div>
+
+      <div class="gallery-grid">
+        
+        <!-- Polaroid Card 1 -->
+        <div class="polaroid-card wobbly-border rotate-left">
+          <div class="polaroid-img-frame">
+            <img src="assets/trip-kyoto.jpg" alt="Quiet streets of Kyoto at dusk" class="polaroid-img">
+          </div>
+          <span class="polaroid-caption font-script">Kyoto, Japan — Quiet dusk in Gion</span>
+        </div>
+        
+        <!-- Polaroid Card 2 -->
+        <div class="polaroid-card wobbly-border rotate-right">
+          <div class="polaroid-img-frame">
+            <img src="assets/trip-cappadocia.jpg" alt="Hot air balloons in Cappadocia" class="polaroid-img">
+          </div>
+          <span class="polaroid-caption font-script">Cappadocia, Turkey — Sunrise drift</span>
+        </div>
+        
+        <!-- Polaroid Card 3 -->
+        <div class="polaroid-card wobbly-border rotate-left-slight">
+          <div class="polaroid-img-frame">
+            <img src="assets/trip-amalfi.jpg" alt="Amalfi cliffs overlooking Mediterranean Sea" class="polaroid-img">
+          </div>
+          <span class="polaroid-caption font-script">Amalfi, Italy — Sun-bleached cliffs</span>
+        </div>
+        
+        <!-- Polaroid Card 4 -->
+        <div class="polaroid-card wobbly-border rotate-right-slight">
+          <div class="polaroid-img-frame">
+            <img src="assets/trip-patagonia.jpg" alt="Patagonia Fitz Roy reflecting on lake" class="polaroid-img">
+          </div>
+          <span class="polaroid-caption font-script">Patagonia, Chile — Morning silence</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Process / About Section (Timeline) -->
+    <section class="process-section" id="about">
+      <div class="section-header-container">
+        <span class="section-eyebrow label-mono">Behind the Scenes</span>
+        <h2 class="section-title font-serif">How a Story is Made</h2>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Vertical dashed timeline line -->
+        <div class="timeline-line"></div>
+        
+        <!-- Step 1 -->
+        <div class="timeline-item">
+          <div class="timeline-marker-wrapper">
+            <svg class="timeline-marker" viewBox="0 0 30 30" fill="none" stroke="#D98C99" stroke-width="2">
+              <circle cx="15" cy="15" r="10" fill="#F5EBE1" />
+              <circle cx="15" cy="15" r="4" fill="#3A2F2A" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="step-num label-mono">01 / scouting</span>
+            <h3 class="step-title font-serif">Seeking the Silent Places</h3>
+            <p class="step-desc font-body">
+              Before planning a journey, I research the lesser-known, quiet spots where history, culture, and nature intersect. I look for the visual stories that standard tourist itineraries overlook.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="timeline-item">
+          <div class="timeline-marker-wrapper">
+            <svg class="timeline-marker" viewBox="0 0 30 30" fill="none" stroke="#8B9B78" stroke-width="2">
+              <circle cx="15" cy="15" r="10" fill="#F5EBE1" />
+              <circle cx="15" cy="15" r="4" fill="#3A2F2A" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="step-num label-mono">02 / sketching</span>
+            <h3 class="step-title font-serif">Visual Journaling</h3>
+            <p class="step-desc font-body">
+              Upon arrival, I spend the first hours with a physical journal—taking note of light shifts, scent profiles, color combinations, and hand-sketching layout layouts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="timeline-item">
+          <div class="timeline-marker-wrapper">
+            <svg class="timeline-marker" viewBox="0 0 30 30" fill="none" stroke="#D98C99" stroke-width="2">
+              <circle cx="15" cy="15" r="10" fill="#F5EBE1" />
+              <circle cx="15" cy="15" r="4" fill="#3A2F2A" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="step-num label-mono">03 / capturing</span>
+            <h3 class="step-title font-serif">Camera & Ink</h3>
+            <p class="step-desc font-body">
+              Using high-resolution cameras and analog diary notes, I record the scenery. The focus is always on natural, soft shadows, human scale, and realistic color palettes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="timeline-item">
+          <div class="timeline-marker-wrapper">
+            <svg class="timeline-marker" viewBox="0 0 30 30" fill="none" stroke="#8B9B78" stroke-width="2">
+              <circle cx="15" cy="15" r="10" fill="#F5EBE1" />
+              <circle cx="15" cy="15" r="4" fill="#3A2F2A" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="step-num label-mono">04 / publishing</span>
+            <h3 class="step-title font-serif">Curated Stories</h3>
+            <p class="step-desc font-body">
+              The final step is translating these sensory fragments into cohesive lifestyle features, high-impact social media guides, and rich photographic reels that inspire intentional travel.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Brand Collaborations Section -->
+    <section class="brands-section" id="brands">
+      <div class="section-header-container">
+        <span class="section-eyebrow label-mono">Trusted By</span>
+        <h2 class="section-title font-serif">Brand Partnerships</h2>
+      </div>
+
+      <div class="brands-grid">
+        <span class="brand-tag wobbly-border font-body">Leica Camera</span>
+        <span class="brand-tag wobbly-border font-body">Airbnb</span>
+        <span class="brand-tag wobbly-border font-body">Rimowa</span>
+        <span class="brand-tag wobbly-border font-body">Patagonia</span>
+        <span class="brand-tag wobbly-border font-body">Kinfolk Magazine</span>
+        <span class="brand-tag wobbly-border font-body">Cereal Magazine</span>
+        <span class="brand-tag wobbly-border font-body">Aman Resorts</span>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-box wobbly-border">
+        
+        <span class="contact-eyebrow label-mono">Say Hello</span>
+        <h2 class="contact-title font-serif">Let's Wander Together</h2>
+        
+        <p class="contact-availability font-body">
+          Currently open to commercial lifestyle photography, destination feature storytelling, and sponsored social media campaigns for Autumn & Winter 2026/2027.
+        </p>
+
+        <a href="mailto:collab.bhumii@gmail.com" class="btn btn-contact btn-wobbly font-mono" id="contact-btn">
+          collab.bhumii@gmail.com
+        </a>
+
+        <div class="contact-sub-doodle">
+          <svg class="star-doodle" viewBox="0 0 24 24" fill="none" stroke="#D98C99" stroke-width="1.5">
+            <path d="M12 3 C12 8, 8 12, 3 12 C8 12, 12 16, 12 21 C12 16, 16 12, 21 12 C16 12, 12 8, 12 3 Z" />
+          </svg>
+          <span class="font-script">Reach out and let's craft something beautiful</span>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <span class="footer-name label-mono">BHUMIKA 🐼</span>
+      <span class="footer-dot">•</span>
+      <span class="footer-role label-mono">TRAVEL, LIFESTYLE & FASHION</span>
+      <span class="footer-dot">•</span>
+      <span class="footer-year label-mono">© 2026 PORTFOLIO</span>
+    </div>
+  </footer>
+
+  <!-- JS Interactions -->
+  <script src="main.js"></script>
+</body>
+</html>
