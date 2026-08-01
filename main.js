@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initContactFeedback();
   initSpiralBinder();
+  initHeaderScroll();
+  initParallaxScroll();
 });
 
 /**
@@ -113,10 +115,14 @@ function initScrollReveal() {
   };
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const target = entry.target;
-        
+    // Group entries that intersect together and stagger their entrance delays
+    const intersecting = entries.filter(e => e.isIntersecting);
+    
+    intersecting.forEach((entry, index) => {
+      const target = entry.target;
+      const delay = index * 100; // 100ms staggered delay
+      
+      setTimeout(() => {
         // Restore opacity
         target.style.opacity = '1';
         
@@ -139,9 +145,9 @@ function initScrollReveal() {
             target.style.transform = '';
           }
         }, 850);
+      }, delay);
 
-        observer.unobserve(target);
-      }
+      observer.unobserve(target);
     });
   }, observerOptions);
 
@@ -226,3 +232,52 @@ window.addEventListener('resize', () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(initSpiralBinder, 100);
 });
+
+/**
+ * 5. Interactive Header Scroll Effect
+ * Toggles a glassmorphism style and shrinks header spacing as you scroll down.
+ */
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const toggleHeaderClass = () => {
+    if (window.scrollY > 30) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', toggleHeaderClass);
+  toggleHeaderClass(); // Run on init to handle scroll-reloaded state
+}
+
+/**
+ * 6. Background Parallax Scrolling & Scroll indicator Fade
+ * Creates a slow background scroll sway for the pink lily visual and fades out the scroll arrow.
+ */
+function initParallaxScroll() {
+  const bgLily = document.querySelector('.hero-bg-lily');
+  const scrollIndicator = document.querySelector('.scroll-indicator-wrapper');
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+
+    // Slow scroll factor for 3D parallax depth
+    if (bgLily && window.innerWidth > 768) {
+      bgLily.style.transform = `translateY(${scrolled * 0.28}px) scale(1.05)`;
+    }
+
+    // Fade out scroll arrow when user starts scrolling
+    if (scrollIndicator) {
+      if (scrolled > 80) {
+        scrollIndicator.style.opacity = '0';
+        scrollIndicator.style.pointerEvents = 'none';
+      } else {
+        scrollIndicator.style.opacity = '1';
+        scrollIndicator.style.pointerEvents = 'auto';
+      }
+    }
+  });
+}

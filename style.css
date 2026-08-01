@@ -42,12 +42,23 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
-  /* Paper grain effect via a subtle radial gradient overlay */
+  /* Paper grid pattern */
   background-image: 
-    radial-gradient(rgba(58, 47, 42, 0.03) 1px, transparent 0),
-    radial-gradient(rgba(58, 47, 42, 0.02) 1px, transparent 0);
+    radial-gradient(rgba(58, 47, 42, 0.03) 1.5px, transparent 0),
+    radial-gradient(rgba(58, 47, 42, 0.02) 1.5px, transparent 0);
   background-size: 24px 24px;
   background-position: 0 0, 12px 12px;
+}
+
+/* Premium Physical Paper Grain Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.045; /* Extremely subtle organic grain overlay */
+  pointer-events: none;
+  z-index: 9999;
 }
 
 a {
@@ -127,13 +138,21 @@ img {
 .btn-wobbly {
   border: 1.5px solid var(--text-ink);
   filter: url(#wobbly-filter);
-  background-color: var(--bg-paper);
+  background-color: #FFF2F5; /* contrasting button base */
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              background-color 0.25s ease, 
+              color 0.25s ease, 
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
 }
 
 .btn-wobbly:hover {
+  transform: scale(1.05);
+  background-color: var(--accent-pink);
+  color: #fff;
+  border-color: var(--accent-pink);
+  box-shadow: 0 8px 20px rgba(224, 92, 114, 0.22);
   animation: wiggle 0.4s ease infinite alternate;
-  background-color: var(--text-ink);
-  color: var(--bg-paper);
 }
 
 /* --- Keyframe Animations --- */
@@ -155,12 +174,17 @@ img {
 
 /* --- Header / Navigation --- */
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 1.5rem 2rem;
   z-index: 100;
+  transition: padding var(--transition-speed) ease, 
+              background-color var(--transition-speed) ease, 
+              box-shadow var(--transition-speed) ease,
+              border-bottom var(--transition-speed) ease;
+  border-bottom: 1.5px solid transparent;
 }
 
 .nav-container {
@@ -425,14 +449,23 @@ img {
 }
 
 .stats-card {
-  background-color: var(--bg-paper);
+  background-color: #FFF2F5; /* Blush pink-white */
   padding: 1.5rem 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(58, 47, 42, 0.04);
+  box-shadow: 0 6px 20px rgba(58, 47, 42, 0.04);
+  transition: transform var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow var(--transition-speed) ease,
+              background-color var(--transition-speed) ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  background-color: #FFFDF9; /* soft warm paper glow */
+  box-shadow: 0 15px 30px rgba(224, 92, 114, 0.08), 0 4px 10px rgba(58, 47, 42, 0.03);
 }
 
 .stats-value {
@@ -459,7 +492,7 @@ img {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   padding: 1.5rem 0;
 }
@@ -472,8 +505,35 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   transition: transform var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275),
-              box-shadow var(--transition-speed) ease;
+              box-shadow var(--transition-speed) ease,
+              background-color var(--transition-speed) ease;
+}
+
+/* Washi/Masking tape at the top center of each polaroid */
+.polaroid-card::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2.5deg);
+  width: 65px;
+  height: 16px;
+  background-color: rgba(245, 235, 225, 0.65); /* Translucent washi tape */
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-left: 1.5px dashed rgba(58, 47, 42, 0.1);
+  border-right: 1.5px dashed rgba(58, 47, 42, 0.1);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.02);
+  z-index: 10;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.polaroid-card:nth-child(even)::before {
+  transform: translateX(-50%) rotate(-3.5deg);
+  width: 70px;
 }
 
 .polaroid-img-frame {
@@ -488,6 +548,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 22%; /* Keep face framed in square crop of vertical photos */
   filter: contrast(0.96) sepia(0.04) brightness(0.98);
   transition: transform 0.5s ease;
 }
@@ -522,8 +583,13 @@ img {
 /* Hover effects */
 .polaroid-card:hover {
   transform: translateY(-12px) rotate(0deg) scale(1.03);
-  box-shadow: 0 20px 35px rgba(58, 47, 42, 0.12);
+  box-shadow: 0 20px 35px rgba(224, 92, 114, 0.14), 0 4px 10px rgba(58, 47, 42, 0.04);
+  background-color: #FFFDF9; /* Soft paper glow highlight */
   z-index: 10;
+}
+
+.polaroid-card:hover::before {
+  transform: translateX(-50%) rotate(0deg) scale(1.05); /* Straighten tape slightly on lift */
 }
 
 .polaroid-card:hover .polaroid-img {
@@ -562,6 +628,53 @@ img {
 
 .timeline-item:last-child {
   margin-bottom: 0;
+}
+
+/* Wobbly stitched post-it note blocks for the storytelling steps */
+.timeline-content {
+  background-color: #FFF2F5; /* Blush paper white card */
+  padding: 1.5rem 1.75rem;
+  border: 1.5px solid var(--text-ink);
+  filter: url(#wobbly-filter);
+  box-shadow: 0 6px 20px rgba(58, 47, 42, 0.04);
+  position: relative;
+  transition: transform var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow var(--transition-speed) ease,
+              background-color var(--transition-speed) ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px) scale(1.01);
+  background-color: #FFFDF9; /* soft warm paper glow */
+  box-shadow: 0 15px 30px rgba(224, 92, 114, 0.1), 0 4px 10px rgba(58, 47, 42, 0.04);
+}
+
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 30px;
+  transform: rotate(-3deg);
+  width: 50px;
+  height: 14px;
+  background-color: rgba(245, 235, 225, 0.65);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-left: 1.5px dashed rgba(58, 47, 42, 0.1);
+  border-right: 1.5px dashed rgba(58, 47, 42, 0.1);
+  z-index: 10;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover::before {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+  transform: rotate(2deg);
+  left: auto;
+  right: 30px;
 }
 
 .timeline-marker-wrapper {
@@ -615,19 +728,25 @@ img {
 }
 
 .brand-tag {
-  background-color: var(--bg-paper);
+  background-color: #FFF2F5; /* contrasting blush white card color */
   padding: 0.6rem 1.5rem;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-ink);
-  box-shadow: 0 3px 10px rgba(58, 47, 42, 0.03);
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(58, 47, 42, 0.03);
+  transition: background-color 0.25s ease, 
+              color 0.25s ease, 
+              transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
 }
 
 .brand-tag:hover {
-  background-color: var(--text-ink);
-  color: var(--bg-paper);
-  transform: translateY(-3px) rotate(1deg);
+  background-color: var(--accent-pink);
+  color: #fff;
+  border-color: var(--accent-pink) !important;
+  box-shadow: 0 8px 18px rgba(224, 92, 114, 0.16);
+  transform: translateY(-5px) rotate(1.5deg) scale(1.05);
 }
 
 /* --- Contact Section --- */
@@ -645,6 +764,39 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  transition: transform var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow var(--transition-speed) ease,
+              background-color var(--transition-speed) ease;
+}
+
+.contact-box:hover {
+  transform: translateY(-6px);
+  background-color: #FFFDF9; /* Soft warm paper glow */
+  box-shadow: 0 25px 45px rgba(224, 92, 114, 0.12), 0 4px 15px rgba(58, 47, 42, 0.04);
+}
+
+.contact-box::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(1deg);
+  width: 90px;
+  height: 22px;
+  background-color: rgba(245, 235, 225, 0.75); /* Translucent washi tape */
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-left: 2px dashed rgba(58, 47, 42, 0.12);
+  border-right: 2px dashed rgba(58, 47, 42, 0.12);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.03);
+  z-index: 10;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.contact-box:hover::before {
+  transform: translateX(-50%) rotate(0deg) scale(1.04);
 }
 
 .contact-eyebrow {
@@ -1229,6 +1381,67 @@ img {
   /* Hide overlapping collage elements on very small screens to avoid clipping */
   .pantone-card, .collage-swatch-card {
     display: none;
+  }
+}
+
+/* Custom positioning override for Brighton photo to show face on the right side of the landscape image */
+.polaroid-card img[src*="trip-brighton"] {
+  object-position: 88% 22%;
+}
+
+/* --- Scrolled Navigation Header --- */
+.site-header.scrolled {
+  padding: 0.75rem 2rem;
+  background-color: rgba(247, 229, 233, 0.85); /* Semi-translucent blush pink matching background */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(58, 47, 42, 0.05);
+  border-bottom: 1.5px solid rgba(58, 47, 42, 0.06);
+}
+
+@media screen and (max-width: 768px) {
+  .site-header.scrolled {
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* --- Scroll Down Indicator --- */
+.scroll-indicator-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 3.5rem;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.scroll-text {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  opacity: 0.45;
+  color: var(--text-ink);
+  text-transform: uppercase;
+}
+
+.scroll-arrow-doodle {
+  width: 24px;
+  height: 24px;
+  animation: arrow-bounce 2s infinite;
+  opacity: 0.6;
+}
+
+@keyframes arrow-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(8px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 

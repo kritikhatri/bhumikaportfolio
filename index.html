@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=1.2">
 </head>
 <body>
 
@@ -54,7 +54,6 @@
         <ul>
           <li><a href="#gallery" class="nav-link">Gallery</a></li>
           <li><a href="#about" class="nav-link">Process</a></li>
-          <li><a href="#brands" class="nav-link">Partners</a></li>
           <li><a href="#contact" class="btn btn-nav btn-wobbly">Let's Create</a></li>
         </ul>
       </nav>
@@ -195,6 +194,14 @@
           "Chasing sunsets & new cities. Travel • Lifestyle • Fashion"
         </h2>
 
+        <!-- Animated Scroll Indicator Doodle -->
+        <div class="scroll-indicator-wrapper">
+          <span class="scroll-text label-mono">scroll to explore</span>
+          <svg class="scroll-arrow-doodle" viewBox="0 0 24 24" fill="none" stroke="var(--text-ink)" stroke-width="1.5">
+            <path d="M12 5 v14 M7 14 l5 5 l5 -5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+
       </div>
     </section>
 
@@ -250,33 +257,81 @@
         <!-- Polaroid Card 1 -->
         <div class="polaroid-card wobbly-border rotate-left">
           <div class="polaroid-img-frame">
-            <img src="assets/trip-kyoto.jpg" alt="Quiet streets of Kyoto at dusk" class="polaroid-img">
+            <img src="assets/trip-london.jpg" alt="London, UK — Tower Bridge walk" class="polaroid-img">
           </div>
-          <span class="polaroid-caption font-script">Kyoto, Japan — Quiet dusk in Gion</span>
+          <span class="polaroid-caption font-script">London, UK — Tower Bridge walk 🇬🇧</span>
         </div>
-        
+
         <!-- Polaroid Card 2 -->
         <div class="polaroid-card wobbly-border rotate-right">
           <div class="polaroid-img-frame">
-            <img src="assets/trip-cappadocia.jpg" alt="Hot air balloons in Cappadocia" class="polaroid-img">
+            <img src="assets/trip-guildford.jpg" alt="Guildford, UK — Woodland walk" class="polaroid-img">
           </div>
-          <span class="polaroid-caption font-script">Cappadocia, Turkey — Sunrise drift</span>
+          <span class="polaroid-caption font-script">Guildford, UK — Woodland walk 🌿</span>
         </div>
-        
+
         <!-- Polaroid Card 3 -->
         <div class="polaroid-card wobbly-border rotate-left-slight">
           <div class="polaroid-img-frame">
-            <img src="assets/trip-amalfi.jpg" alt="Amalfi cliffs overlooking Mediterranean Sea" class="polaroid-img">
+            <img src="assets/trip-reading.jpg" alt="Reading, UK — Kennet canal walk" class="polaroid-img">
           </div>
-          <span class="polaroid-caption font-script">Amalfi, Italy — Sun-bleached cliffs</span>
+          <span class="polaroid-caption font-script">Reading, UK — Canal walk 🌸</span>
         </div>
-        
+
         <!-- Polaroid Card 4 -->
         <div class="polaroid-card wobbly-border rotate-right-slight">
           <div class="polaroid-img-frame">
-            <img src="assets/trip-patagonia.jpg" alt="Patagonia Fitz Roy reflecting on lake" class="polaroid-img">
+            <img src="assets/trip-montenegro.jpg" alt="Montenegro — Bay of Kotor view" class="polaroid-img">
           </div>
-          <span class="polaroid-caption font-script">Patagonia, Chile — Morning silence</span>
+          <span class="polaroid-caption font-script">Montenegro — Bay of Kotor 🇲🇪</span>
+        </div>
+
+        <!-- Polaroid Card 5 -->
+        <div class="polaroid-card wobbly-border rotate-left">
+          <div class="polaroid-img-frame">
+            <img src="assets/trip-canterbury.jpg" alt="Canterbury, UK — Cobblestone streets" class="polaroid-img">
+          </div>
+          <span class="polaroid-caption font-script">Canterbury, UK — Cobblestone walk 🇬🇧</span>
+        </div>
+
+        <!-- Polaroid Card 6 -->
+        <div class="polaroid-card wobbly-border rotate-right">
+          <div class="polaroid-img-frame">
+            <img src="assets/trip-oxford.jpg" alt="Oxford, UK — Historic streets" class="polaroid-img">
+          </div>
+          <span class="polaroid-caption font-script">Oxford, UK — Historic streets 🇬🇧</span>
+        </div>
+
+        <!-- Polaroid Card 7 -->
+        <div class="polaroid-card wobbly-border rotate-left-slight">
+          <div class="polaroid-img-frame">
+            <img src="assets/trip-cambridge.jpg" alt="Cambridge, UK — Punting on the River Cam" class="polaroid-img">
+          </div>
+          <span class="polaroid-caption font-script">Cambridge, UK — River punting 🚣‍♂️</span>
+        </div>
+
+        <!-- Polaroid Card 8 -->
+        <div class="polaroid-card wobbly-border rotate-right-slight">
+          <div class="polaroid-img-frame">
+            <img src="assets/trip-portsmouth.jpg" alt="Portsmouth, UK — Sea wall view" class="polaroid-img">
+          </div>
+          <span class="polaroid-caption font-script">Portsmouth, UK — Sea wall view 🌊</span>
+        </div>
+
+        <!-- Polaroid Card 9 -->
+        <div class="polaroid-card wobbly-border rotate-left">
+          <div class="polaroid-img-frame">
+            <img src="assets/trip-bath.jpg" alt="Bath, UK — Georgian streets" class="polaroid-img">
+          </div>
+          <span class="polaroid-caption font-script">Bath, UK — Georgian streets 🇬🇧</span>
+        </div>
+
+        <!-- Polaroid Card 10 -->
+        <div class="polaroid-card wobbly-border rotate-right">
+          <div class="polaroid-img-frame">
+            <img src="assets/trip-brighton.jpg" alt="Brighton, UK — Sunset beach view" class="polaroid-img" style="object-position: 95% 30%;">
+          </div>
+          <span class="polaroid-caption font-script">Brighton, UK — Sunset beach walk 🌅</span>
         </div>
 
       </div>
@@ -364,23 +419,6 @@
       </div>
     </section>
 
-    <!-- Brand Collaborations Section -->
-    <section class="brands-section" id="brands">
-      <div class="section-header-container">
-        <span class="section-eyebrow label-mono">Trusted By</span>
-        <h2 class="section-title font-serif">Brand Partnerships</h2>
-      </div>
-
-      <div class="brands-grid">
-        <span class="brand-tag wobbly-border font-body">Leica Camera</span>
-        <span class="brand-tag wobbly-border font-body">Airbnb</span>
-        <span class="brand-tag wobbly-border font-body">Rimowa</span>
-        <span class="brand-tag wobbly-border font-body">Patagonia</span>
-        <span class="brand-tag wobbly-border font-body">Kinfolk Magazine</span>
-        <span class="brand-tag wobbly-border font-body">Cereal Magazine</span>
-        <span class="brand-tag wobbly-border font-body">Aman Resorts</span>
-      </div>
-    </section>
 
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
